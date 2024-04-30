@@ -12,11 +12,23 @@ class ExpensesApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+
+  final titleController = TextEditingController();
+  final valueController = TextEditingController(); 
+  
   final _transactions = [
     Transaction(
-        id: 't1', title: 'Novo Tênis', value: 630.75, date: DateTime.now()),
+        id: 't1',
+        title: 'Novo Tênis', 
+        value: 280.75, 
+        date: DateTime.now()
+        ),
     Transaction(
-        id: 't2', title: 'Conta de Luz', value: 200.00, date: DateTime.now())
+        id: 't2', 
+        title: 'Conta de Luz', 
+        value: 200.00, 
+        date: DateTime.now()
+        ),
   ];
 
   @override
@@ -26,7 +38,6 @@ class MyHomePage extends StatelessWidget {
           title: Text('Despesas Pessoais'),
         ),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Container(
@@ -81,7 +92,42 @@ class MyHomePage extends StatelessWidget {
                   ]),
                 );
               }).toList(),
-            )
+            ),
+           Card(
+            elevation: 5,
+            child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: Column(
+                children: <Widget>[
+                  TextField(
+                    controller: titleController,
+                    decoration: InputDecoration(
+                      labelText: 'Título',
+                    ),
+                  ),
+                  TextField(
+                    controller: valueController,
+                    decoration: InputDecoration(
+                      labelText: 'Valor (R\$)',
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: <Widget>[
+                      TextButton(
+                         child: Text('Nova Transação',
+                         style: TextStyle(color: Colors.purple)),
+                         onPressed: () {
+                          print(titleController.text);
+                          print(valueController.text);
+                         },
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+           )
           ],
         ));
   }
