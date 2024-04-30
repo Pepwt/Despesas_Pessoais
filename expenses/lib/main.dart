@@ -38,29 +38,27 @@ class MyHomePage extends StatelessWidget {
             Column(
               children: _transactions.map((tr) {
                 return Card(
-                  child: Row(
-                    children: <Widget>[
-                     Container(
+                  child: Row(children: <Widget>[
+                    Container(
                       margin: EdgeInsets.symmetric(
                         horizontal: 15,
                         vertical: 12,
                       ),
                       decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.purple,
-                          width: 2,
-                        )
-                      ),
+                          border: Border.all(
+                        color: Colors.purple,
+                        width: 2,
+                      )),
                       padding: EdgeInsets.all(10),
-                       child: Text(
-                        tr.value.toString(),
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          color: Colors.purple.shade900,
-                        )
+                      child: Text(
+                        'R\$ ${tr.value.toStringAsFixed(2)}',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Colors.purple.shade900,
+                          )
                        ),
-                     ),
+                    ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
@@ -68,15 +66,15 @@ class MyHomePage extends StatelessWidget {
                           tr.title,
                           style: TextStyle(
                             fontSize: 16,
-                            fontWeight: FontWeight.bold, 
-                            ),
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                         Text(
                           tr.date.toString(),
                           style: TextStyle(
                             color: Colors.grey[500],
                           ),
-                          ),
+                        ),
                       ],
                     )
                   ]),
