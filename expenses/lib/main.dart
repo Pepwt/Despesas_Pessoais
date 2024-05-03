@@ -6,15 +6,11 @@ main() => runApp(ExpensesApp());
 class ExpensesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: MyHomePage()
-    );
+    return MaterialApp(home: MyHomePage());
   }
 }
 
 class MyHomePage extends StatelessWidget {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,12 +23,12 @@ class MyHomePage extends StatelessWidget {
             children: <Widget>[
               Container(
                 child: Card(
-                  color: Colors.amber,
+                  color: Colors.purple,
                   child: Text('Gráfico'),
                   elevation: 5,
                 ),
               ),
-             TransactionUser(),
+              TransactionUser(),
             ],
           ),
         ));
