@@ -19,6 +19,7 @@ Página inicial com lista de transações e botão para adicionar nova transaç�
 
 Nenhuma Transação
 ![Tela Nenhuma Transação](assets/images/ntransacao.png)
+Formulário vazio. 
 
 Adicionar Transação
 ![Tela Transação](assets/images/transacao.png)
@@ -36,9 +37,9 @@ Para executar o projeto em seu ambiente local, siga as etapas abaixo:
 
 ## Pacotes Utilizados
 
-intl: Para formatação de datas e valores monetários.
-flutter_png: Para renderizar imagens PNG.
-charts_flutter: Para criar gráficos de barras.
+1. intl: Para formatação de datas e valores monetários.
+2. flutter_png: Para renderizar imagens PNG.
+3. charts_flutter: Para criar gráficos de barras.
 
 ## Contribuição
 

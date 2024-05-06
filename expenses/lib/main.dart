@@ -104,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
     builder: (_) {
       return TransactionForm(_addTransaction);
     },
-    );
+  );
 }
 
   @override
