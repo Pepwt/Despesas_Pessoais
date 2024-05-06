@@ -6,13 +6,25 @@ class ChartBar extends StatelessWidget {
   final double percentage;
 
   ChartBar({
-    this.label,
-    this.value,
-    this.percentage,
+   required this.label,
+   required this.value,
+   required this.percentage,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Column(
+      children: <Widget>[
+        Text('R\$${value.toStringAsFixed(2)}'),
+        SizedBox(height: 5),
+        Container(
+          height: 60,
+          width: 10,
+          child: null,
+        ),
+        SizedBox(height: 5),
+        Text(label),
+      ],
+    );
   }
 }
