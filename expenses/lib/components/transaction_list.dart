@@ -20,11 +20,11 @@ class TransactionList extends StatelessWidget {
           ),
           SizedBox(height: 20),
           Container(
-            //height: 200,
-            //child: Image.asset(
-              //'assets\images\dormindo.png',
-              //fit: BoxFit.cover,
-              //),
+            height: 200,
+            child: Image.asset(
+              'assets/images/zz.png',
+              fit: BoxFit.cover,
+              ),
           ),
         ],
       ) : ListView.builder(
