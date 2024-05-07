@@ -8,12 +8,12 @@ import 'components/transaction_list.dart';
 import 'components/chart.dart';
 import 'models/transaction.dart';
 
-main() => runApp(ExpensesApp());
+void main() => runApp(ExpensesApp());
 
 class ExpensesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final ThemeData tema = ThemeData(); 
+    final ThemeData tema = ThemeData();
     return MaterialApp(
       home: MyHomePage(),
       theme: tema.copyWith(
@@ -22,11 +22,11 @@ class ExpensesApp extends StatelessWidget {
           secondary: Colors.amber,
         ),
         textTheme: tema.textTheme.copyWith(
-          titleLarge: TextStyle(
+          headline6: TextStyle(
             fontFamily: 'OpenSans',
-            fontSize: 18,
+            fontSize: 20,
             fontWeight: FontWeight.bold,
-            color: Colors.black,
+            color: Colors.black, // Cor do texto do título
           ),
         ),
         appBarTheme: AppBarTheme(
@@ -34,6 +34,7 @@ class ExpensesApp extends StatelessWidget {
             fontFamily: 'Montserrat',
             fontSize: 20,
             fontWeight: FontWeight.bold,
+            color: Colors.black, // Cor do texto do título do AppBar
           ),
         ),
       ),
@@ -42,15 +43,14 @@ class ExpensesApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
- final List<Transaction> _transactions = [];
+  final List<Transaction> _transactions = [];
 
-  List<Transaction> get _recentTransaction{
+  List<Transaction> get _recentTransactions {
     return _transactions.where((tr) {
       return tr.date.isAfter(DateTime.now().subtract(
         Duration(days: 7),
@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }).toList();
   }
 
-   _addTransaction(String title, double value, DateTime date){
+  void _addTransaction(String title, double value, DateTime date) {
     final newTransaction = Transaction(
       id: Random().nextDouble().toString(),
       title: title,
@@ -73,47 +73,47 @@ class _MyHomePageState extends State<MyHomePage> {
     Navigator.of(context).pop();
   }
 
- _removeTransaction(String id){
-  setState(() {
-    _transactions.removeWhere((tr) => tr.id == id);
-  });
- }
- 
-  _openTransactionFormModal(BuildContext context) {
-  showModalBottomSheet(
-    context: context,
-    builder: (_) {
-      return TransactionForm(_addTransaction);
-    },
-  );
-}
+  void _removeTransaction(String id) {
+    setState(() {
+      _transactions.removeWhere((tr) => tr.id == id);
+    });
+  }
+
+  void _openTransactionFormModal(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (_) {
+        return TransactionForm(_addTransaction);
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Despesas Pessoais'),
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(Icons.add),
-              onPressed: () => _openTransactionFormModal(context),
-              )
+      appBar: AppBar(
+        title: Text('Despesas Pessoais'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.add),
+            onPressed: () => _openTransactionFormModal(context),
+          )
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Chart(_recentTransactions),
+            TransactionList(_transactions, _removeTransaction),
           ],
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-            Chart(_recentTransaction),
-              TransactionList(_transactions, _removeTransaction),
-      ],
-          ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: () => _openTransactionFormModal(context),
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        );
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () => _openTransactionFormModal(context),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+    );
   }
 }

@@ -17,13 +17,21 @@ Tela Inicial
 ![Tela Inicial](assets/images/telainicial.png)
 Página inicial com lista de transações e botão para adicionar nova transação.
 
+
 Nenhuma Transação
 ![Tela Nenhuma Transação](assets/images/ntransacao.png)
-Formulário vazio. 
+A tela exibida quando não há transações cadastradas.
+
 
 Adicionar Transação
 ![Tela Transação](assets/images/transacao.png)
 Formulário para adicionar nova transação.
+
+
+Gráfico
+![Tela Gráfico](assets/images/grafico.png)
+A tela do gráfico exibe um gráfico de barras representando as despesas dos últimos 7 dias. Cada barra no gráfico representa o total das despesas em um dia específico da semana.
+
 
 ## Como Executar
 
