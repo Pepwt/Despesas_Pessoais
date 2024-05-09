@@ -54,7 +54,6 @@ class _TransactionFormState extends State<TransactionForm> {
             right: 10,
             left: 10,
             bottom: 10 + MediaQuery.of(context).viewInsets.bottom,
-          
     );
     return SingleChildScrollView(
       child: Card(
