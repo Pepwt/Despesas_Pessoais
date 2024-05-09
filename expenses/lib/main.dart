@@ -22,7 +22,7 @@ class ExpensesApp extends StatelessWidget {
           secondary: Colors.amber,
         ),
         textTheme: tema.textTheme.copyWith(
-          headline6: TextStyle(
+          titleLarge: TextStyle(
             fontFamily: 'OpenSans',
             fontSize: 20,
             fontWeight: FontWeight.bold,
@@ -101,8 +101,8 @@ class _MyHomePageState extends State<MyHomePage> {
     );
 
     final availableHeight = MediaQuery.of(context).size.height - 
-        appBar.preferredSize.height - 
-        MediaQuery.of(context).padding.top;
+    appBar.preferredSize.height - 
+    MediaQuery.of(context).padding.top;
     
     return Scaffold(
       appBar: appBar,
@@ -111,11 +111,11 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Container(
-              height: availableHeight * 0.3,
+              height: availableHeight * 0.30,
               child: Chart(_recentTransactions),
               ),
             Container(
-              height: availableHeight * 0.7,
+              height: availableHeight * 0.70,
               child: TransactionList(_transactions, _removeTransaction),
               ),
           ],
