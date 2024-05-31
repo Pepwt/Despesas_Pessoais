@@ -5,32 +5,35 @@ Este é um aplicativo de controle de despesas pessoais desenvolvido em Flutter. 
 
 ## Funcionalidades Principais
 
-Funcionalidades Principais
-Adicionar novas transações com título, valor e data.
-Visualizar lista de transações recentes.
-Visualizar gráfico de despesas dos últimos 7 dias.
+1. Adicionar Transações: É possível adicionar novas transações com título, valor e data.
+
+2. Visualizar Lista de Transações: A tela inicial exibe a lista de transações recentes. Caso não haja transações cadastradas, é mostrada uma mensagem indicando que não há transações.
+
+3. Visualizar Gráfico de Despesas: Há uma opção para visualizar um gráfico de barras representando as despesas dos últimos 7 dias. Cada barra no gráfico representa o total das despesas em um dia específico da semana.
 
 ## Capturas de Tela
 
 Capturas de Tela
-Tela Inicial 
-![Tela Inicial](assets/images/telainicial.png)
-Página inicial com lista de transações e botão para adicionar nova transação.
 
 
-Nenhuma Transação
+Tela Inicial
 ![Tela Nenhuma Transação](assets/images/ntransacao.png)
 A tela exibida quando não há transações cadastradas.
 
 
+Tela de Transação
+![Tela de Transação](assets/images/telatransacao.png)
+A tela de transação permite adicionar uma nova transação inserindo o título, o valor e selecionando a data da transação. Após preencher os campos, o usuário pode clicar no botão "Nova Transação" para confirmar a adição.
+
+
 Adicionar Transação
-![Tela Transação](assets/images/transacao.png)
+![Tela Adicionar Transação](assets/images/transacao.png)
 Formulário para adicionar nova transação.
 
 
 Gráfico
 ![Tela Gráfico](assets/images/grafico.png)
-A tela do gráfico exibe um gráfico de barras representando as despesas dos últimos 7 dias. Cada barra no gráfico representa o total das despesas em um dia específico da semana.
+A tela do gráfico exibe um gráfico de barras representando as despesas dos últimos 7 dias. Cada barra no gráfico representa o total das despesas em um dia específico da semana.No canto superior direito, há um ícone de "menu" para acessar a lista de transações.
 
 
 ## Como Executar
@@ -48,6 +51,7 @@ Para executar o projeto em seu ambiente local, siga as etapas abaixo:
 1. intl: Para formatação de datas e valores monetários.
 2. flutter_png: Para renderizar imagens PNG.
 3. charts_flutter: Para criar gráficos de barras.
+4. cupertino_icons: Para adicionar ícones específicos do iOS.
 
 ## Contribuição
 
